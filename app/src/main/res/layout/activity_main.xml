@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/costo_servicio"
+        android:layout_height="160dp"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="Costo de Servicio"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/pregunta"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/costo_servicio"
+        android:text="¿Cómo calificarías la atención?"
+        />
+    <RadioGroup
+        android:id="@+id/opciones"
+        android:checkedButton="@id/veinte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pregunta"
+        android:orientation="vertical">
+        <RadioButton
+            android:id="@+id/veinte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Impresionante (20%)"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/opciones"/>
+        <RadioButton
+            android:id="@+id/dieciocho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bueno (18%)"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/opciones"/>
+        <RadioButton
+            android:id="@+id/quince"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Esta bien (15%)"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/opciones"/>
+    </RadioGroup>
+    <Switch
+        android:id="@+id/redondear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Desea Redondear?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/opciones"
+        app:layout_constraintTop_toBottomOf="@id/opciones" />
+
+    <Button
+    android:id="@+id/calcular"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="Calcular"
+    app:layout_constraintTop_toBottomOf="@id/redondear"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/propina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calcular"
+        android:text="Propina" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
